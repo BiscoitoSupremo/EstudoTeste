@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zelo Imóveis - Estudo de Mercado 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="favicon-32x32.png"/>
+</head>
+<body>
+
+<!-- Barra lateral -->
+<aside class="sidebar" id="sidebar">
+  <div class="logo">
+    <div class="logo-icon">
+      <img src="favicon-32x32.png" alt="Ícone da Zelo Imóveis"/>
+    </div>
+    <span class="logo-name">ZELO Imóveis</span>
+  </div>
+
+  <div class="profile">
+    <div class="avatar"><img src="icone.png" alt=""></div>
+    <div class="profile-name">Dashboard 2026</div>
+    <div class="profile-role">Campinas · SP</div>
+    <span class="creci-tag">CRECI SP 28.914-J</span>
+  </div>
+
+  <nav class="nav">
+    <a class="nav-item active" data-page="overview" href="#" aria-current="page">
+      <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+      <span>Visão Geral</span>
+    </a>
+    <a class="nav-item" data-page="market" href="#">
+      <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+      <span>Mercado</span>
+    </a>
+    <a class="nav-item" data-page="social" href="#">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      <span>Redes Sociais</span>
+    </a>
+    <a class="nav-item" data-page="competitors" href="#">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      <span>Concorrentes</span>
+    </a>
+    <a class="nav-item" data-page="personas" href="#">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 5.8 1.29 6 4.01L18 18H6l-.01-1.99C6.2 13.29 9.3 12 12 12zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.39 4.56C17.16 13.46 14.54 13 12 13c-2.54 0-5.16.46-6.39 1.56C4.61 15.07 4 16.46 4 18v2h16v-2c0-1.54-.61-2.93-1.61-3.44z"/></svg>
+      <span>Personas</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <span>Claro</span>
+    <div class="toggle" id="themeToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Alternar tema claro e escuro"></div>
+    <span>Escuro</span>
+  </div>
+</aside>
+
+<!-- Conteúdo principal -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+<main class="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+      <span></span><span></span><span></span>
+    </button>
+    <h1 class="page-title" id="pageTitle">Visão Geral</h1>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="search" id="searchInput" placeholder="Buscar informação no dashboard…" aria-label="Buscar informação no dashboard" aria-controls="searchResults" aria-expanded="false" autocomplete="off"/>
+      <div class="search-results" id="searchResults" role="listbox" aria-label="Resultados da busca" aria-live="polite" hidden></div>
+    </div>
+    <div class="topbar-right">
+      <button class="btn-primary" id="exportBtn">↑ Exportar</button>
+      <div class="notif-btn" id="notifBtn" title="Notificações">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        <span class="notif-dot"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- PÁGINA: VISÃO GERAL -->
+  <section class="page active" id="page-overview">
+    <div class="bento">
+
+      <!-- Hero card: portfólio -->
+      <div class="card hero-card">
+        <div class="hero-top">
+          <span class="hero-label">Portfólio Zelo Imóveis</span>
+          <span class="hero-more">Desde 1976</span>
+        </div>
+        <div class="ring-wrap">
+          <canvas id="donutPortfolio" width="130" height="130"></canvas>
+          <div class="ring-center">
+            <strong class="ring-num">3.000+</strong>
+            <span class="ring-sub">IMÓVEIS</span>
+          </div>
+        </div>
+        <div class="hero-legend">
+          <div class="hleg"><span class="hleg-dot d-white"></span><span>Locação</span><b>62%</b></div>
+          <div class="hleg"><span class="hleg-dot d-light"></span><span>Venda</span><b>38%</b></div>
+        </div>
+      </div>
+
+      <!-- KPIs Campinas -->
+      <div class="card">
+        <p class="card-ttl">Campinas · Indicadores 2026</p>
+        <div class="kpi-grid">
+          <div class="kpi-item">
+            <span class="ki-icon">📈</span>
+            <span class="ki-val">+11,18<small>%</small></span>
+            <span class="ki-lbl">Preço de venda · 12 meses</span>
+            <span class="ki-badge">FipeZAP · ago/26 · Campinas</span>
+          </div>
+          <div class="kpi-item">
+            <span class="ki-icon">💰</span>
+            <span class="ki-val">1,19<small>mi</small></span>
+            <span class="ki-lbl">População estimada 2026</span>
+            <span class="ki-badge">IBGE · 1.189.761 hab.</span>
+          </div>
+          <div class="kpi-item">
+            <span class="ki-icon">🏗️</span>
+            <span class="ki-val">1.880</span>
+            <span class="ki-lbl">Lançamentos residenciais · 2026</span>
+            <span class="ki-badge">Secovi-SP · +8,5% t/t</span>
+          </div>
+          <div class="kpi-item">
+            <span class="ki-icon">🔑</span>
+            <span class="ki-val">+17,91<small>%</small></span>
+            <span class="ki-lbl">Aluguel residencial · 12 meses</span>
+            <span class="ki-badge">FipeZAP · ago/26 · Campinas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report card -->
+      <div class="card report-card">
+        <div class="grid-pattern"></div>
+        <div class="report-inner">
+          <div class="report-tags" role="group" aria-label="Selecionar relatório temático">
+            <button class="rtag on" type="button" data-group="report" aria-pressed="true">Locação</button>
+            <button class="rtag" type="button" data-group="report" aria-pressed="false">Venda</button>
+            <button class="rtag" type="button" data-group="report" aria-pressed="false">Gestão</button>
+          </div>
+          <div class="report-body" id="reportBody">
+            <strong>Mercado de Locação · Campinas 2026</strong><br><br>
+            Campinas encerrou setembro com sinais fortes nos dois lados do mercado. Nos dados mais recentes disponíveis até 30/09, o FipeZAP de agosto mostra alta de <strong>17,91%</strong> em 12 meses nos aluguéis residenciais e de <strong>11,18%</strong> nos preços de venda, com médias anunciadas de <strong>R$ 56,21/m²</strong> e <strong>R$ 8.089/m²</strong>, respectivamente. No 2º trimestre, a região registrou <strong>1.880 lançamentos</strong> e <strong>2.103 vendas</strong> segundo o Secovi-SP. A Selic foi reduzida para <strong>13,75% a.a.</strong> em setembro, ainda mantendo o crédito imobiliário seletivo.
+          </div>
+          <button class="dl-btn" id="dlBtn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            <span>Baixar Relatório Completo</span>
+          </button>
+          <p class="download-status" id="downloadStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- Engajamento (card claro) -->
+      <div class="card eng-card">
+        <div class="eng-top">
+          <span class="eng-title">Prioridade Digital</span>
+          <div class="eng-arrow">↗</div>
+        </div>
+        <div class="day-tabs" role="group" aria-label="Selecionar dia da semana">
+          <button class="day-tab active" type="button" data-eng="78" aria-pressed="true">Seg<span>78%</span></button>
+          <button class="day-tab" type="button" data-eng="84" aria-pressed="false">Ter<span>84%</span></button>
+          <button class="day-tab" type="button" data-eng="71" aria-pressed="false">Qua<span>71%</span></button>
+          <button class="day-tab" type="button" data-eng="91" aria-pressed="false">Qui<span>91%</span></button>
+          <button class="day-tab" type="button" data-eng="88" aria-pressed="false">Sex<span>88%</span></button>
+        </div>
+        <div class="eng-big" id="engBig">78<span>%</span></div>
+        <div class="eng-sub">Índice estratégico interno · foco em conteúdo e resposta rápida</div>
+      </div>
+
+      <!-- ROI -->
+      <div class="card roi-card">
+        <div class="roi-top">
+          <div class="roi-label">
+            <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+            Maturidade Digital
+          </div>
+          <span class="roi-link" id="roiToggle" role="button" tabindex="0" aria-controls="roiExtra" aria-expanded="false">▼ Detalhes</span>
+        </div>
+        <div class="roi-num">68<span class="roi-pct">/100</span></div>
+        <div class="roi-sub">Diagnóstico estratégico — não é métrica financeira auditada</div>
+        <div class="roi-extra hidden" id="roiExtra" aria-hidden="true">
+          <div class="mini-stat"><span>Custo por lead</span><b>R$ 18</b></div>
+          <div class="mini-stat"><span>Leads/mês</span><b>~140</b></div>
+          <div class="mini-stat"><span>Conv. em visita</span><b>31%</b></div>
+        </div>
+        <div class="roi-chart-wrap"><canvas id="roiLine"></canvas></div>
+      </div>
+      
+      <!-- Score card -->
+      <div class="card score-card">
+        <div class="score-icons">🏠🏢🏡🏘️🏗️🏙️🏠🏢🏡🏘️🏗️🏙️</div>
+        <div class="score-content">
+          <span class="score-tag">📊 Campinas · Mercado em Expansão</span>
+          <span class="score-rank">2.103 vendas no 2026 · Secovi-SP</span>
+          <span class="score-desc">Campinas ficou em 3º lugar nas vendas estaduais, com 13,7% de participação no recorte regional pesquisado</span>
+        </div>
+      </div>
+
+    </div><!-- /bento -->
+
+    <!-- Gráfico tendência -->
+    <div class="card trend-card" style="margin-top:16px">
+      <div class="trend-top">
+        <p class="card-ttl" style="margin:0">📈 Evolução · Campinas-SP · Tendências e sinais de demanda</p>
+        <div class="chip-row" role="group" aria-label="Selecionar indicador do gráfico de tendências">
+          <button class="chip on" type="button" data-target="trendVendas" aria-pressed="true" aria-controls="trendChartContainer trendChartMessage">Vendas</button>
+          <button class="chip" type="button" data-target="trendLocacao" aria-pressed="false" aria-controls="trendChartContainer trendChartMessage">Locação</button>
+          <button class="chip" type="button" data-target="trendVGV" aria-pressed="false" aria-controls="trendChartContainer trendChartMessage">VGV%</button>
+        </div>
+      </div>
+      <div id="trendChartContainer" class="trend-chart-container" style="height:200px"><canvas id="trendMain"></canvas></div>
+      <p class="trend-chart-message" id="trendChartMessage" role="status" aria-live="polite" hidden>Pausado. Preciso de mais dados para atualizar o gráfico.</p>
+    </div>
+
+  </section>
+
+  <!-- PÁGINA: MERCADO -->
+  <section class="page" id="page-market">
+    <div class="section-header">
+      <h2>Análise de Mercado · Campinas-SP</h2>
+      <p>Estudo de mercado · setembro/2026. Data de corte: 30/09/2026. Fontes públicas: Secovi-SP, FipeZAP/Fipe, IBGE, Banco Central e DataReportal.</p>
+    </div>
+
+    <div class="bento3">
+
+      <div class="card">
+        <p class="card-ttl">🏠 Locação residencial · R$/m² por tipologia</p>
+        <div style="height:220px"><canvas id="locacaoChart"></canvas></div>
+        <div class="chart-note">Fonte: FipeZAP Locação Residencial · ago/2026. Médias da amostra nacional por número de dormitórios; Campinas: R$ 56,21/m².</div>
+      </div>
+
+      <div class="card">
+        <p class="card-ttl">🏗️ Vendas 2026 · Campinas por segmento</p>
+        <div style="height:220px"><canvas id="lancamentosChart"></canvas></div>
+        <div class="chart-note">Fonte: Secovi-SP · 2026. 2.103 unidades vendidas: 1.313 MCMV e 790 demais segmentos.</div>
+      </div>
+
+      <div class="card">
+        <p class="card-ttl">📊 Campinas · Variações e yield</p>
+        <div style="height:220px"><canvas id="m2Chart"></canvas></div>
+        <div class="chart-note">Fonte: FipeZAP · ago/2026. Variações em 12 meses e renda residencial de Campinas.</div>
+      </div>
+
+    </div>
+
+    <div class="bento2" style="margin-top:16px">
+      <div class="card">
+        <p class="card-ttl">📅 2026 · Vendas x Lançamentos · Campinas</p>
+        <div style="height:220px"><canvas id="vendasHistChart"></canvas></div>
+        <div class="chart-note">Fonte: Secovi-SP · dados divulgados em ago/set 2026 para o 2º trimestre.</div>
+      </div>
+      <div class="card">
+        <p class="card-ttl">🔍 Demanda potencial de compra · Campinas</p>
+        <div style="height:220px"><canvas id="buscasChart"></canvas></div>
+        <div class="chart-note">Fonte: Brain Inteligência Estratégica, divulgada pelo Secovi-SP no Imobicom 2026. Famílias com intenção ativa de compra por padrão.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <p class="card-ttl">🗂️ Campinas · Painel de preços e variações · ago/2026</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Segmento</th><th>Preço médio</th><th>Variação ago/26</th><th>Acum. 2026</th><th>12 meses</th><th>Renda residencial</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Venda residencial</td><td>R$ 8.089/m²</td><td>+1,18%</td><td>+7,09%</td><td>+11,18%</td><td>—</td></tr>
+            <tr><td>Locação residencial</td><td>R$ 56,21/m²</td><td>+1,24%</td><td>+10,36%</td><td>+17,91%</td><td>8,23% a.a.</td></tr>
+            <tr><td>Venda comercial</td><td>R$ 6.866/m²</td><td>+0,78%</td><td>+3,08%</td><td>+4,58%</td><td>—</td></tr>
+            <tr><td>Locação comercial</td><td>R$ 49,81/m²</td><td>+0,94%</td><td>+4,26%</td><td>+7,23%</td><td>8,87% a.a.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÁGINA: REDES SOCIAIS -->
+  <section class="page" id="page-social">
+    <div class="section-header">
+      <h2>Redes Sociais · Setor Imobiliário Brasil 2026</h2>
+      <p>Fonte principal: DataReportal Digital 2026 (dados de alcance publicitário de out/2025); métricas internas devem ser conectadas ao Analytics da Zelo</p>
+    </div>
+
+    <div class="bento3">
+
+      <div class="card">
+        <p class="card-ttl">🎯 Distribuição de Leads por Plataforma</p>
+        <div style="height:220px;position:relative">
+          <canvas id="leadsDonut"></canvas>
+          <div class="donut-center-label">
+            <strong>6</strong><span>plataformas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-ttl">👥 Faixa Etária · Público Imobiliário nas Redes</p>
+        <div class="age-bars">
+          <div class="age-row"><div class="age-hd"><span>18–24 anos</span><span class="age-pct">9%</span></div><div class="bt"><div class="bf" style="width:9%"></div></div></div>
+          <div class="age-row"><div class="age-hd"><span>25–34 anos</span><span class="age-pct">31%</span></div><div class="bt"><div class="bf" style="width:31%"></div></div></div>
+          <div class="age-row"><div class="age-hd"><span>35–44 anos</span><span class="age-pct">29%</span></div><div class="bt"><div class="bf" style="width:29%"></div></div></div>
+          <div class="age-row"><div class="age-hd"><span>45–54 anos</span><span class="age-pct">20%</span></div><div class="bt"><div class="bf" style="width:20%"></div></div></div>
+          <div class="age-row"><div class="age-hd"><span>55+ anos</span><span class="age-pct">11%</span></div><div class="bt"><div class="bf" style="width:11%"></div></div></div>
+        </div>
+        <div class="insight-box" style="margin-top:12px">
+          📌 <b>25–44 anos</b> = 60% do público. Locação atrai 22–32; compra, 30–45.
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-ttl">📡 Radar · Engajamento vs Conversão</p>
+        <div style="height:220px"><canvas id="radarChart"></canvas></div>
+      </div>
+
+    </div>
+
+    <!-- Cards de plataformas -->
+    <div class="plat-cards-row">
+      <div class="plat-big-card">
+        <div class="plat-header">
+          <span class="plat-emoji">📸</span>
+          <div>
+            <strong>Instagram</strong>
+            <span>147 mi de alcance publicitário no Brasil</span>
+          </div>
+          <span class="plat-rank">#1</span>
+        </div>
+        <div class="plat-stats">
+          <div class="ps"><span>Leads imob.</span><b>32%</b></div>
+          <div class="ps"><span>Engajamento</span><b>92%</b></div>
+          <div class="ps"><span>Melhor formato</span><b>Reels</b></div>
+        </div>
+        <div class="plat-bar"><div style="width:92%"></div></div>
+      </div>
+      <div class="plat-big-card">
+        <div class="plat-header">
+          <span class="plat-emoji">💬</span>
+          <div><strong>WhatsApp</strong><span>Canal decisivo para atendimento e conversão</span></div>
+          <span class="plat-rank">#2</span>
+        </div>
+        <div class="plat-stats">
+          <div class="ps"><span>Leads imob.</span><b>28%</b></div>
+          <div class="ps"><span>Fechamento</span><b>alto</b></div>
+          <div class="ps"><span>Melhor uso</span><b>Atend. direto</b></div>
+        </div>
+        <div class="plat-bar"><div style="width:80%"></div></div>
+      </div>
+      <div class="plat-big-card">
+        <div class="plat-header">
+          <span class="plat-emoji">👤</span>
+          <div><strong>Facebook</strong><span>Grupos locais · faixa 35–55</span></div>
+          <span class="plat-rank">#3</span>
+        </div>
+        <div class="plat-stats">
+          <div class="ps"><span>Leads imob.</span><b>18%</b></div>
+          <div class="ps"><span>Grupos imob.</span><b>forte</b></div>
+          <div class="ps"><span>Melhor formato</span><b>Anúncios</b></div>
+        </div>
+        <div class="plat-bar"><div style="width:58%"></div></div>
+      </div>
+      <div class="plat-big-card">
+        <div class="plat-header">
+          <span class="plat-emoji">▶️</span>
+          <div><strong>YouTube</strong><span>150 mi de alcance publicitário no Brasil</span></div>
+          <span class="plat-rank">#4</span>
+        </div>
+        <div class="plat-stats">
+          <div class="ps"><span>Leads imob.</span><b>12%</b></div>
+          <div class="ps"><span>Tour virtual</span><b>88% conv.</b></div>
+          <div class="ps"><span>Melhor formato</span><b>Vídeo longo</b></div>
+        </div>
+        <div class="plat-bar"><div style="width:75%"></div></div>
+      </div>
+      <div class="plat-big-card">
+        <div class="plat-header">
+          <span class="plat-emoji">🎵</span>
+          <div><strong>TikTok</strong><span>131 mi de adultos alcançáveis no Brasil</span></div>
+          <span class="plat-rank">#5</span>
+        </div>
+        <div class="plat-stats">
+          <div class="ps"><span>Leads imob.</span><b>7%</b></div>
+          <div class="ps"><span>Crescimento</span><b>rápido</b></div>
+          <div class="ps"><span>Melhor formato</span><b>Short video</b></div>
+        </div>
+        <div class="plat-bar"><div style="width:65%"></div></div>
+      </div>
+      <div class="plat-big-card">
+        <div class="plat-header">
+          <span class="plat-emoji">💼</span>
+          <div><strong>LinkedIn</strong><span>90 mi de membros alcançáveis no Brasil</span></div>
+          <span class="plat-rank">#6</span>
+        </div>
+        <div class="plat-stats">
+          <div class="ps"><span>Leads imob.</span><b>3%</b></div>
+          <div class="ps"><span>Ticket médio</span><b>alto</b></div>
+          <div class="ps"><span>Melhor formato</span><b>Artigos</b></div>
+        </div>
+        <div class="plat-bar"><div style="width:40%"></div></div>
+      </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="card" style="margin-top:16px">
+      <p class="card-ttl">🎬 Tipos de Conteúdo com Maior Engajamento Imobiliário</p>
+      <div class="ctype-grid">
+        <div class="ctype-item"><span>🏠</span><span class="ct-nm">Tour virtual / Vídeo do imóvel</span><div class="ct-bar"><div style="width:88%"></div></div><span class="ct-pct">88%</span></div>
+        <div class="ctype-item"><span>📍</span><span class="ct-nm">Reels de bairro / Lifestyle</span><div class="ct-bar"><div style="width:74%"></div></div><span class="ct-pct">74%</span></div>
+        <div class="ctype-item"><span>📊</span><span class="ct-nm">Análise de mercado (vídeo)</span><div class="ct-bar"><div style="width:62%"></div></div><span class="ct-pct">62%</span></div>
+        <div class="ctype-item"><span>💡</span><span class="ct-nm">Dicas de compra / financiamento</span><div class="ct-bar"><div style="width:55%"></div></div><span class="ct-pct">55%</span></div>
+        <div class="ctype-item"><span>🌟</span><span class="ct-nm">Depoimentos de clientes</span><div class="ct-bar"><div style="width:48%"></div></div><span class="ct-pct">48%</span></div>
+        <div class="ctype-item"><span>🔑</span><span class="ct-nm">Posts de imóveis para alugar</span><div class="ct-bar"><div style="width:43%"></div></div><span class="ct-pct">43%</span></div>
+        <div class="ctype-item"><span>📸</span><span class="ct-nm">Fotos profissionais de lançamentos</span><div class="ct-bar"><div style="width:40%"></div></div><span class="ct-pct">40%</span></div>
+        <div class="ctype-item"><span>🏘️</span><span class="ct-nm">Comparativo de bairros</span><div class="ct-bar"><div style="width:35%"></div></div><span class="ct-pct">35%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÁGINA: CONCORRENTES -->
+  <section class="page" id="page-competitors">
+    <div class="section-header">
+      <h2>Análise de Concorrentes · Campinas-SP</h2>
+      <p>Revisão pública em set/2026. Dados de redes sociais e portfólios que não têm fonte pública estável permanecem sinalizados para validação direta antes de decisões de mídia.</p>
+    </div>
+
+    <div class="bento2">
+      <div class="card">
+        <p class="card-ttl">📊 Maturidade Digital · Comparativo Estratégico</p>
+        <div style="height:260px"><canvas id="instagramComp"></canvas></div>
+      </div>
+      <div class="card">
+        <p class="card-ttl">🏠 Escala e Tempo de Mercado · Comparativo</p>
+        <div style="height:260px"><canvas id="portfolioComp"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Cards de concorrentes -->
+    <div class="comp-cards" style="margin-top:16px">
+
+      <div class="comp-card self">
+        <div class="comp-top">
+          <div class="comp-logo">Z</div>
+          <div class="comp-info">
+            <strong>Zelo Imóveis</strong>
+            <span>📍 Centro · Campinas-SP</span>
+          </div>
+          <span class="comp-badge self-badge">Nós</span>
+        </div>
+        <div class="comp-stats">
+          <div class="cs"><span>Atuação</span><b>50 anos (desde 1976)</b></div>
+          <div class="cs"><span>Portfólio</span><b>3.000+ imóveis</b></div>
+          <div class="cs"><span>Instagram</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Facebook</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>LinkedIn</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>CRECI</span><b>SP 28.914-J</b></div>
+        </div>
+        <div class="comp-strength">
+          <span class="tag-green">✓ 50 anos de tradição</span>
+          <span class="tag-green">✓ Portfólio amplo divulgado</span>
+          <span class="tag-orange">⚠ Métricas sociais exigem monitoramento mensal</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-top">
+          <div class="comp-logo" style="background:#8b5cf6">C</div>
+          <div class="comp-info">
+            <strong>Cássia Adala Soluções Imobiliárias</strong>
+            <span>📍 Av. Eng. Carlos Stevenson · Campinas</span>
+          </div>
+          <span class="comp-badge">Concorrente</span>
+        </div>
+        <div class="comp-stats">
+          <div class="cs"><span>Atuação</span><b>13 anos</b></div>
+          <div class="cs"><span>Foco</span><b>Comercial + Residencial</b></div>
+          <div class="cs"><span>Instagram</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Facebook</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>LinkedIn</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Área</span><b>Campinas + Paulínia</b></div>
+        </div>
+        <div class="comp-strength">
+          <span class="tag-green">✓ Forte presença digital</span>
+          <span class="tag-green">✓ LinkedIn muito ativo</span>
+          <span class="tag-orange">⚠ Menos tempo de mercado</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-top">
+          <div class="comp-logo" style="background:#f97316">Q</div>
+          <div class="comp-info">
+            <strong>QuintoAndar</strong>
+            <span>📍 Plataforma Digital · Opera em Campinas</span>
+          </div>
+          <span class="comp-badge">Proptech</span>
+        </div>
+        <div class="comp-stats">
+          <div class="cs"><span>Modelo</span><b>100% Digital</b></div>
+          <div class="cs"><span>Locação Campinas</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Aluguel médio</span><b>sem dado público estável</b></div>
+          <div class="cs"><span>M² venda médio</span><b>sem dado público estável</b></div>
+          <div class="cs"><span>CRECI</span><b>SP J24.344</b></div>
+          <div class="cs"><span>Diferencial</span><b>Sem fiador</b></div>
+        </div>
+        <div class="comp-strength">
+          <span class="tag-green">✓ Escala nacional</span>
+          <span class="tag-green">✓ UX 100% digital</span>
+          <span class="tag-orange">⚠ Sem atendimento presencial</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-top">
+          <div class="comp-logo" style="background:#10b981">L</div>
+          <div class="comp-info">
+            <strong>Lago Imóveis</strong>
+            <span>📍 Ribeirão Preto / Interior SP</span>
+          </div>
+          <span class="comp-badge">Regional</span>
+        </div>
+        <div class="comp-stats">
+          <div class="cs"><span>Instagram</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Posts</span><b>1.134 publicações</b></div>
+          <div class="cs"><span>Atuação</span><b>Interior SP</b></div>
+          <div class="cs"><span>Foco</span><b>Residencial</b></div>
+          <div class="cs"><span>Presença</span><b>Regional forte</b></div>
+          <div class="cs"><span>Diferencial</span><b>Marketing visual</b></div>
+        </div>
+        <div class="comp-strength">
+          <span class="tag-green">✓ Forte no Instagram</span>
+          <span class="tag-green">✓ Alto volume de conteúdo</span>
+          <span class="tag-orange">⚠ Fora de Campinas</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-top">
+          <div class="comp-logo" style="background:#ef4444">S</div>
+          <div class="comp-info">
+            <strong>Start Imóveis Campinas</strong>
+            <span>📍 Campinas · CRECI 20.020-J</span>
+          </div>
+          <span class="comp-badge">Concorrente</span>
+        </div>
+        <div class="comp-stats">
+          <div class="cs"><span>Instagram</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Posts</span><b>1.196 publicações</b></div>
+          <div class="cs"><span>Foco</span><b>Venda + Lançamentos</b></div>
+          <div class="cs"><span>Público-alvo</span><b>Jovens e famílias</b></div>
+          <div class="cs"><span>Tom</span><b>Descontraído</b></div>
+          <div class="cs"><span>Diferencial</span><b>Maior digital local</b></div>
+        </div>
+        <div class="comp-strength">
+          <span class="tag-green">✓ Maior Instagram local</span>
+          <span class="tag-green">✓ Conteúdo constante</span>
+          <span class="tag-orange">⚠ Foco menor em locação</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-top">
+          <div class="comp-logo" style="background:#0891b2">D</div>
+          <div class="comp-info">
+            <strong>D. Lange Imóveis</strong>
+            <span>Campinas-SP</span>
+          </div>
+          <span class="comp-badge">Concorrente</span>
+        </div>
+        <div class="comp-stats">
+          <div class="cs"><span>Instagram</span><b>validar na plataforma</b></div>
+          <div class="cs"><span>Posts</span><b>1.467 publicações</b></div>
+          <div class="cs"><span>Foco</span><b>Residencial</b></div>
+          <div class="cs"><span>Conteúdo</span><b>Alto volume</b></div>
+          <div class="cs"><span>Engajamento</span><b>Médio-alto</b></div>
+          <div class="cs"><span>Diferencial</span><b>Consistência</b></div>
+        </div>
+        <div class="comp-strength">
+          <span class="tag-green">✓ Consistência no Instagram</span>
+          <span class="tag-green">✓ Bom reconhecimento local</span>
+          <span class="tag-orange">⚠ Portfólio menor</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SWOT -->
+    <div class="card" style="margin-top:16px">
+      <p class="card-ttl">⚖️ SWOT · Zelo Imóveis vs Mercado Digital</p>
+      <div class="swot-grid">
+        <div class="swot-q strengths">
+          <h4>💪 Forças</h4>
+          <ul>
+            <li>50 anos de atuação e reputação sólida em Campinas</li>
+            <li>Portfólio de 3.000+ imóveis — maior do segmento local</li>
+            <li>CRECI ativo e conformidade legal completa</li>
+            <li>Atendimento presencial e personalizado</li>
+            <li>validar na plataforma no Facebook (maior base social atual)</li>
+          </ul>
+        </div>
+        <div class="swot-q weaknesses">
+          <h4>⚠️ Fraquezas</h4>
+          <ul>
+            <li>Base digital historicamente menor que concorrentes mais orientados a conteúdo</li>
+            <li>Cadência e formatos precisam ser medidos por alcance, salvamentos e leads — não apenas seguidores</li>
+            <li>Oportunidade de consolidar vídeo curto e tours em YouTube/Instagram</li>
+            <li>LinkedIn pode ser usado para proprietários, investidores e marca empregadora</li>
+            <li>Jornada digital deve competir em velocidade, transparência e facilidade documental</li>
+          </ul>
+        </div>
+        <div class="swot-q opportunities">
+          <h4>🚀 Oportunidades</h4>
+          <ul>
+            <li>Campinas registrou 2.103 vendas residenciais no 2026 e 13,7% de participação no recorte estadual pesquisado pelo Secovi-SP</li>
+            <li>Alta demanda por locação digital (geração 25–34)</li>
+            <li>TikTok e Reels têm custo baixo e alto alcance orgânico</li>
+            <li>Tours virtuais reduzem atrito e qualificam visitas; medir conversão na operação Zelo</li>
+            <li>Público de 35–54 anos ainda usa Facebook e WhatsApp</li>
+          </ul>
+        </div>
+        <div class="swot-q threats">
+          <h4>⚡ Ameaças</h4>
+          <ul>
+            <li>Proptechs elevam a expectativa por contratação simples e atendimento contínuo</li>
+            <li>Concorrentes locais com maior cadência de conteúdo disputam atenção digital</li>
+            <li>Cássia Adala expandindo para Paulínia e região</li>
+            <li>Proptechs reduzindo papel do corretor tradicional</li>
+            <li>Selic em 13,75% a.a. desde 17/09/2026 mantém o crédito imobiliário em ambiente restritivo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÁGINA: PERSONAS -->
+  <section class="page" id="page-personas">
+    <div class="section-header">
+      <h2>Personas · Público Imobiliário Digital</h2>
+      <p>Análise comportamental por plataforma e perfil de comprador/locatário · Campinas-SP 2026</p>
+    </div>
+
+    <!-- Seletor de persona -->
+    <div class="persona-tabs" role="group" aria-label="Selecionar persona">
+      <button class="ptab active" type="button" data-persona="0" aria-pressed="true">👩‍💼 Ana · Locatária Digital</button>
+      <button class="ptab" type="button" data-persona="1" aria-pressed="false">👨‍👩‍👧 Carlos · Comprador Família</button>
+      <button class="ptab" type="button" data-persona="2" aria-pressed="false">📱 Giovanna · Gen Z TikTok</button>
+      <button class="ptab" type="button" data-persona="3" aria-pressed="false">💼 Roberto · Investidor</button>
+      <button class="ptab" type="button" data-persona="4" aria-pressed="false">👵 Marta · Relocadora Madura</button>
+    </div>
+
+    <div class="persona-display" id="personaDisplay">
+      <!-- Preenchido pelo JS -->
+    </div>
+
+    <!-- Gráfico por persona -->
+    <div class="bento2" style="margin-top:16px">
+      <div class="card">
+        <p class="card-ttl">📊 Comportamento por Plataforma · Todas as Personas</p>
+        <div style="height:260px"><canvas id="personaBehavior"></canvas></div>
+      </div>
+      <div class="card">
+        <p class="card-ttl">🗓️ Melhor Horário para Postar por Plataforma</p>
+        <div class="horario-grid">
+          <div class="hr-item"><span class="hr-icon">📸</span><span class="hr-name">Instagram</span><span class="hr-time">18h–21h (Ter–Qui)</span><span class="hr-note">Reels performam até 3× mais</span></div>
+          <div class="hr-item"><span class="hr-icon">💬</span><span class="hr-name">WhatsApp</span><span class="hr-time">9h–11h e 19h–21h</span><span class="hr-note">Evitar fins de semana à tarde</span></div>
+          <div class="hr-item"><span class="hr-icon">👤</span><span class="hr-name">Facebook</span><span class="hr-time">13h–16h (Qua–Sex)</span><span class="hr-note">Grupos locais têm pico às 14h</span></div>
+          <div class="hr-item"><span class="hr-icon">▶️</span><span class="hr-name">YouTube</span><span class="hr-time">15h–18h (Seg–Qua)</span><span class="hr-note">Tours de imóveis no início da semana</span></div>
+          <div class="hr-item"><span class="hr-icon">🎵</span><span class="hr-name">TikTok</span><span class="hr-time">19h–23h (diário)</span><span class="hr-note">Sexta e sábado têm maior viralização</span></div>
+          <div class="hr-item"><span class="hr-icon">💼</span><span class="hr-name">LinkedIn</span><span class="hr-time">8h–10h (Ter–Qui)</span><span class="hr-note">Horário comercial, perfil B2B</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jornada de compra -->
+    <div class="card" style="margin-top:16px">
+      <p class="card-ttl">🗺️ Jornada Digital do Cliente Imobiliário</p>
+      <div class="jornada">
+        <div class="jornada-step">
+          <div class="j-num">1</div>
+          <div class="j-icon">🔍</div>
+          <div class="j-title">Descoberta</div>
+          <div class="j-desc">Instagram Reels, TikTok, Google. Duração média: 2–4 semanas</div>
+          <div class="j-plat">Instagram · TikTok · Google</div>
+        </div>
+        <div class="jornada-arrow">→</div>
+        <div class="jornada-step">
+          <div class="j-num">2</div>
+          <div class="j-icon">❤️</div>
+          <div class="j-title">Interesse</div>
+          <div class="j-desc">Tour virtual, fotos, vídeo do bairro. Duração média: 1–3 semanas</div>
+          <div class="j-plat">YouTube · Instagram · Site</div>
+        </div>
+        <div class="jornada-arrow">→</div>
+        <div class="jornada-step">
+          <div class="j-num">3</div>
+          <div class="j-icon">💬</div>
+          <div class="j-title">Contato</div>
+          <div class="j-desc">WhatsApp, DM Instagram, formulário. Duração: 1–7 dias</div>
+          <div class="j-plat">WhatsApp · Instagram DM</div>
+        </div>
+        <div class="jornada-arrow">→</div>
+        <div class="jornada-step">
+          <div class="j-num">4</div>
+          <div class="j-icon">🏠</div>
+          <div class="j-title">Visita</div>
+          <div class="j-desc">Presencial ou virtual. 31% dos contatos viram visita efetiva</div>
+          <div class="j-plat">Presencial · Google Meet</div>
+        </div>
+        <div class="jornada-arrow">→</div>
+        <div class="jornada-step">
+          <div class="j-num">5</div>
+          <div class="j-icon">✍️</div>
+          <div class="j-title">Fechamento</div>
+          <div class="j-desc">Proposta, documentação, contrato. Taxa de conversão visita→fechamento: 18%</div>
+          <div class="j-plat">Presencial · WhatsApp</div>
+        </div>
+        <div class="jornada-arrow">→</div>
+        <div class="jornada-step">
+          <div class="j-num">6</div>
+          <div class="j-icon">⭐</div>
+          <div class="j-title">Fidelização</div>
+          <div class="j-desc">Pós-venda, indicações, depoimento. Clientes indicam em média 2,3 pessoas</div>
+          <div class="j-plat">WhatsApp · Google · Instagram</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div class="sources-card card">
+  <p class="card-ttl">🔎 Fontes e data de corte</p>
+  <div class="sources-grid">
+    <a href="https://secovi.com.br/mercado-imobiliario-em-campinas-registra-alta-e-consolida-tendencias-de-interiorizacao-e-imoveis-compactos/" target="_blank" rel="noopener">Secovi-SP · Campinas, mar/2026</a>
+    <a href="https://secovi.com.br/category/regionais-scv/regional_campinas/" target="_blank" rel="noopener">Secovi-SP · Regional Campinas</a>
+    <a href="https://downloads.fipe.org.br/indices/fipezap/fipezap-202608-residencial-venda.pdf" target="_blank" rel="noopener">FipeZAP · Venda residencial · ago/2026</a>
+     <a href="https://downloads.fipe.org.br/indices/fipezap/fipezap-202608-residencial-locacao.pdf" target="_blank" rel="noopener">FipeZAP · Locação residencial · ago/2026</a>
+     <a href="https://downloads.fipe.org.br/indices/fipezap/fipezap-202608-comercial.pdf" target="_blank" rel="noopener">FipeZAP · Comercial · ago/2026</a>
+    <a href="https://www.ibge.gov.br/cidades-e-estados/sp/campinas.html" target="_blank" rel="noopener">IBGE · Campinas</a>
+    <a href="https://datareportal.com/reports/digital-2026-brazil" target="_blank" rel="noopener">DataReportal · Digital 2026 Brasil</a>
+     <a href="https://www.bcb.gov.br/publicacoes/atascopom/16092026" target="_blank" rel="noopener">Banco Central · Copom · set/2026</a>
+    <a href="https://zeloimoveis.com.br/quem-somos/" target="_blank" rel="noopener">Zelo Imóveis · história institucional</a>
+  </div>
+</div>
+<div class="method-note">
+  <strong>Nota metodológica:</strong> estudo atualizado com data de corte em 30/09/2026. O FipeZAP disponível dentro desse corte é o informe de agosto/2026; dados do Secovi-SP incluem o 2026 divulgado em setembro. Foram preservados layout e navegação. Métricas internas, personas, maturidade digital e distribuição de leads continuam sendo hipóteses estratégicas até conexão com CRM/Analytics.
+</div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
